@@ -1,9 +1,3 @@
-# This is the base code for v0.1 of our Ruby text analyzer.
-# Visit https://github.com/codeunion/text-analysis/wiki to see what to do.
-#
-# Send an email to your cohort mailing list if you have any questions
-# or you're stuck!  These comments are here to help you, but please delete them
-# as you go along. You wouldn't normally have such heavily-commented code.
 
 # Method name: item_counts
 # Input:   An arbitrary array
@@ -23,14 +17,15 @@
 # In short, item_counts(array) tells us how many times each item appears
 # in the input array.
 
+require_relative './count_in_list.rb'
+
 def item_counts(array)
   counts = {} # Initialize counts to an empty Hash
 
+
   array.each do |item|
-    # Add code here to modify the "counts" hash accordingly
-    # You'll need to handle two cases:
-    #   1. The first time we've seen a particular item in the array
-    #   2. The second-or-later time we've seen a particular item in the array
+    times = count_in_list(array, item)
+    counts[item] = times
   end
 
   counts # This returns the "counts" hash
